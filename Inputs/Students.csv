@@ -1,0 +1,103 @@
+#this line is a comment line
+# 50-200 students
+#Name;Neptun;Supervisor;Exam course; Course code
+Andrási Bulcsú János;AAAAAA;Rajacsics Tamás;3D grafikus rendszerek;BMEVIIIAC01
+Antal Gábor;BAAAAA;Ekler Péter;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Arnócz László;CAAAAA;Blázovics László;Adatvezérelt rendszerek;BMEVIAUAC01
+Beckl Gábor;DAAAAA;Gincsai Gábor;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Berta Balázs;EAAAAA;Tóth Tibor;Kliensoldali technológiák;BMEVIAUAC02
+Bihary Gergely Sándor;FAAAAA;Ekler Péter;Kliensoldali technológiák;BMEVIAUAC02
+Blum Márton;GAAAAA;Forstner Bertalan;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Bodor Norbert;HAAAAA;Kővári Bence András;Kliensoldali technológiák;BMEVIAUAC02
+Bognár Márton József;IAAAAA;Blázovics László;Adatvezérelt rendszerek;BMEVIAUAC01
+Braun Márton Szabolcs;JAAAAA;Ekler Péter;Adatvezérelt rendszerek;BMEVIAUAC01
+Burján Viktor;KAAAAA;Ács Judit;Alkalmazásfejlesztési környezetek;BMEVIAUAC04
+Czap Balázs;LAAAAA;Forstner Bertalan;Kliensoldali technológiák;BMEVIAUAC02
+Csányi Marcell Péter;MAAAAA;Tóth Tibor;Alkalmazásfejlesztési környezetek;BMEVIAUAC04
+Cserna Balázs;NAAAAA;Ács Judit;Objektumorientált szoftvertervezés;BMEVIIIAC00
+Csőre Antal Tamás;OAAAAA;Dunaev Dmitriy;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Dávid Ádám;PAAAAA;Ekler Péter;Kliensoldali technológiák;BMEVIAUAC02
+Déri Tamás;QAAAAA;Szabó Gábor;Kliensoldali technológiák;BMEVIAUAC02
+Elek Dávid István;RAAAAA;Forstner Bertalan;Intelligens rendszerfelügyelet;BMEVIMIA370
+Élő Dénes Bence;SAAAAA;Kővári Bence András;Informatikai rendszertervezés;BMEVIMIAC01
+Erdős Szilvia;TAAAAA;Kővári Bence András;Kliensoldali technológiák;BMEVIAUAC02
+Falvai Olivér Benjámin;UAAAAA;Forstner Bertalan;Kliensoldali technológiák;BMEVIAUAC02
+Farkas Gergő;VAAAAA;Kővári Bence András;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Fodor Gábor Dániel;WAAAAA;Forstner Bertalan;Kliensoldali technológiák;BMEVIAUAC02
+Gáspár Vilmos;XAAAAA;Benedek Zoltán;Adatvezérelt rendszerek;BMEVIAUAC01
+Gyárfás Gábor;YAAAAA;Tóth Tibor;Kliensoldali technológiák;BMEVIAUAC02
+György Tímea;ZAAAAA;Dudás Ákos;Adatvezérelt rendszerek;BMEVIAUAC01
+Győri Mihály;ABAAAA;Csorba Kristóf;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Horváth Péter;BBAAAA;Rajacsics Tamás;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Huszti Dorottya;CBAAAA;Ács Judit;Kliensoldali technológiák;BMEVIAUAC02
+Jáhn Erik;DBAAAA;Fekete Tamás;Adatvezérelt rendszerek;BMEVIAUAC01
+Jancsovics Tamás;EBAAAA;Ekler Péter;Mobil infokommunikációs rendszerek;BMEVIHIA317
+Jenei Máté;FBAAAA;Benedek Zoltán;Kliensoldali technológiák;BMEVIAUAC02
+Jóna Kata;GBAAAA;Ekler Péter;Adatvezérelt rendszerek;BMEVIAUAC01
+Kálmán Bence;HBAAAA;Kővári Bence András;Adatvezérelt rendszerek;BMEVIAUAC01
+Karancsi Ádám;IBAAAA;Kővári Bence András;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Károlyi Áron;JBAAAA;Kővári Bence András;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Kiss Szabolcs;KBAAAA;Tóth Tibor;Kliensoldali technológiák;BMEVIAUAC02
+Koleszár Patrik;LBAAAA;Kővári Bence András;Adatvezérelt rendszerek;BMEVIAUAC01
+Kovács Bálint István;MBAAAA;Ekler Péter;Adatvezérelt rendszerek;BMEVIAUAC01
+Kovács Benedek;NBAAAA;Blázovics László;Objektumorientált szoftvertervezés;BMEVIIIAC00
+Kovács Dániel;OBAAAA;Szabó Gábor;Adatvezérelt rendszerek;BMEVIAUAC01
+Kovács Tibor;PBAAAA;Simon Gábor;Adatvezérelt rendszerek;BMEVIAUAC01
+Kővári Balázs;QBAAAA;Benedek Zoltán;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Kristály Márk;RBAAAA;Ekler Péter;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Kulacs Péter;SBAAAA;Gincsai Gábor;Kliensoldali technológiák;BMEVIAUAC02
+Kutasy Kitti;TBAAAA;Csorba Kristóf;Alkalmazásfejlesztési környezetek;BMEVIAUAC04
+Lohonyai Bálint;UBAAAA;Dudás Ákos;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Magyar Gábor István;VBAAAA;Lengyel László;Objektumorientált szoftvertervezés;BMEVIIIAC00
+Mentler Dávid;WBAAAA;Kövesdán Gábor;Objektumorientált szoftvertervezés;BMEVIIIAC00
+Mihályi Balázs;XBAAAA;Kővári Bence András;Kliensoldali technológiák;BMEVIAUAC02
+Móczár Dávid;YBAAAA;Simon Gábor;Adatvezérelt rendszerek;BMEVIAUAC01
+Müller Gergő Bence;ZBAAAA;Forstner Bertalan;Adatvezérelt rendszerek;BMEVIAUAC01
+Nagy Bence Zsigmond;ACAAAA;Ekler Péter;Kliensoldali technológiák;BMEVIAUAC02
+Nagy Nikolett;BCAAAA;Ács Judit;Kliensoldali technológiák;BMEVIAUAC02
+Nagy Péter Géza;CCAAAA;Ács Judit;Kliensoldali technológiák;BMEVIAUAC02
+Nagy Péter Szabolcs;DCAAAA;Forstner Bertalan;Kliensoldali technológiák;BMEVIAUAC02
+Németh Gergely Dániel;ECAAAA;Ács Judit;Informatikai rendszertervezés;BMEVIMIAC01
+Palatinszky Dániel Gábor;FCAAAA;Mezei Gergely;Kliensoldali technológiák;BMEVIAUAC02
+Páli Márton;GCAAAA;Tóth Tibor;Kliensoldali technológiák;BMEVIAUAC02
+Pap Edina;HCAAAA;Hideg Attila;Alkalmazásfejlesztési környezetek;BMEVIAUAC04
+Pápai Attila;ICAAAA;Szabó Gábor;Objektumorientált szoftvertervezés;BMEVIIIA371
+Paróczi Gergő;JCAAAA;Hamar János Krisztián;Alkalmazásfejlesztési környezetek;BMEVIAUAC04
+Perneky Virág;KCAAAA;Kis-Nagy Dániel Dávid;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Pintér Benedek;LCAAAA;Kővári Bence András;Kliensoldali technológiák;BMEVIAUAC02
+Princz Ákos;MCAAAA;Simon Gábor;Objektumorientált szoftvertervezés;BMEVIIIAC00
+Rostás Balázs;NCAAAA;Forstner Bertalan;Kliensoldali technológiák;BMEVIAUAC02
+Rottenhoffer Olivér;OCAAAA;Imre Gábor;Kliensoldali technológiák;BMEVIAUAC02
+Stoica Márk;PCAAAA;Sipos Márton Ákos;Kliensoldali technológiák;BMEVIAUAC02
+Sümegi Márk;QCAAAA;Kökényesi Tamás;Integrációs és ellenőrzési technikák;BMEVIMIAC04
+Szabó András Gábor;RCAAAA;Forstner Bertalan;Adatvezérelt rendszerek;BMEVIAUAC01
+Szabó Attila Dániel;SCAAAA;Ács Judit;Kliensoldali technológiák;BMEVIAUAC02
+Szabó Dóra;TCAAAA;Gincsai Gábor;Kliensoldali technológiák;BMEVIAUAC02
+Szabo Zsombor-Tamás;UCAAAA;Asztalos Márk;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Szántó Dávid Gergely;VCAAAA;Albert István;Kliensoldali technológiák;BMEVIAUAC02
+Szemán Bence;WCAAAA;Imre Gábor;Alkalmazásfejlesztési környezetek;BMEVIAUAC04
+Szendi Tamás Pál;XCAAAA;Gincsai Gábor;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Szigeti Blanka;YCAAAA;Csorba Kristóf;Alkalmazásfejlesztési környezetek;BMEVIAUAC04
+Szilágyi Norbert Renátó;ZCAAAA;Csorba Kristóf;Adatvezérelt rendszerek;BMEVIAUAC01
+Szlovák Máté Ákos;ADAAAA;Blázovics László;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Szücs Cintia Lia;BDAAAA;Kővári Bence András;Kliensoldali technológiák;BMEVIAUAC02
+Takács Gergő;CDAAAA;Gazdi László;Alkalmazásfejlesztési környezetek;BMEVIAUAC04
+Takács Levente;DDAAAA;Hideg Attila;Adatvezérelt rendszerek;BMEVIAUAC01
+Takács Norbert;EDAAAA;Forstner Bertalan;Kliensoldali technológiák;BMEVIAUAC02
+Tautz Szilveszter;FDAAAA;Tóth Tibor;Alkalmazásfejlesztési környezetek;BMEVIAUAC04
+Temesvári Fanni;GDAAAA;Kővári Bence András;Kliensoldali technológiák;BMEVIAUAC02
+Tolnay Zoltán;HDAAAA;Mezei Gergely;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Tombor Dániel;IDAAAA;Forstner Bertalan;Kooperatív és tanuló rendszerek;BMEVIMIA357
+Tóth Attila;JDAAAA;Szabó Gábor;Kliensoldali technológiák;BMEVIAUAC02
+Tóth Dániel;KDAAAA;Albert István;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Tóth Péter István;LDAAAA;Ekler Péter;Adatvezérelt rendszerek;BMEVIAUAC01
+Tömpe Boldizsár;MDAAAA;Forstner Bertalan;Adatvezérelt rendszerek;BMEVIAUAC01
+Ujhelyi Benedek;NDAAAA;Blázovics László;Kliensoldali technológiák;BMEVIAUAC02
+Varga Péter Krisztián;ODAAAA;Dudás Ákos;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Végh Éva;PDAAAA;Imre Gábor;Objektumorientált szoftvertervezés;BMEVIIIAC00
+Velez Krisztián;QDAAAA;Ekler Péter;Adatvezérelt rendszerek;BMEVIAUAC01
+Veszner Dávid;RDAAAA;Blázovics László;Adatvezérelt alkalmazások fejlesztése;BMEVIAUA369
+Zaymus Gábor Mihály;SDAAAA;Benedek Zoltán;Kliensoldali technológiák;BMEVIAUAC02
+Zóka Dániel;TDAAAA;Kövesdán Gábor;Adatvezérelt rendszerek;BMEVIAUAC01
+Zollai András;UDAAAA;Cserkúti Péter;Kliensoldali technológiák;BMEVIAUAC02
+Zöld Máté;VDAAAA;Fekete Tamás;Adatvezérelt rendszerek;BMEVIAUAC01
