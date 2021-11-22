@@ -1,6 +1,6 @@
 #this line is a comment line
 # 50-200 students
-#Name;Neptun;Supervisor;Exam course; Course code
+#ID;NAME;Teacher name1;teacher name2;
 BMEVIIIAC01;3D grafikus rendszerek;Szécsi László
 BMEVIAUA369;Adatvezérelt alkalmazások fejlesztése;Dudás Ákos;Gincsai Gábor;Asztalos Márk;Albert István;Cserkúti Péter;Benedek Zoltán
 BMEVIAUAC01;Adatvezérelt rendszerek;Dudás Ákos;Benedek Zoltán;Imre Gábor
