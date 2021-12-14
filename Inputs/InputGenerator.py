@@ -1,5 +1,4 @@
 from math import fabs
-import math
 import random
 
 
@@ -20,7 +19,7 @@ for i in range(3):
         for k in range(teacherToCourse):
             notNewName= True
             while(notNewName):
-                temp=random.randint(0,teacherNumber)
+                temp=random.randint(0,teacherNumber-1)
                 isItNew=True
                 for x in InstructorNames:
                     if x==temp:
@@ -33,7 +32,7 @@ for i in range(3):
     fCourses.close()
     #generating teachers file
     fInstructors = open("Instructors"+str(i+1)+".csv", "w")
-    daysNum=round(studentNumber/10)+random.randint(1,3) #garanting that there is enough days   
+    daysNum=random.randint(10,16)   
     for j in range(teacherNumber):
         Line="InstructorName"+str(j)
         role=random.randint(0,10)
@@ -60,8 +59,8 @@ for i in range(3):
     #Generating Students file
     fStudents = open("Students"+str(i+1)+".csv", "w")
     for j in range(studentNumber):
-        randSupirvesor=random.randint(0,teacherNumber)
-        randCourse=random.randint(0,courseNumber)
+        randSupirvesor=random.randint(0,teacherNumber-1)
+        randCourse=random.randint(0,courseNumber-1)
         Line="StudentName"+str(j)+";Neptun"+str(j)+";InstructorName"+str(randSupirvesor)+";CourseName"+str(randCourse)+";CourseID"+str(randCourse)+"\n"
         fStudents.write(Line)
     fStudents.close()

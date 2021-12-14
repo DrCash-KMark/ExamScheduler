@@ -115,8 +115,8 @@ namespace ExamScheduler.InputReading
                     name = data[0],
                     neptun = data[1],
                     consultant = teachers.Find(o => o.name == data[2]),
-                    course = courses.Find(o => o.courseCode == data[4])
-                };
+                    course = courses.Find(o => o.courseCode == data[4])                    
+                };                
                 students.Add(newStudent);
             }
         }
