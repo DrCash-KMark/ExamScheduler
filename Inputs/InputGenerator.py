@@ -1,4 +1,5 @@
 from math import fabs
+import math
 import random
 
 
@@ -32,7 +33,7 @@ for i in range(3):
     fCourses.close()
     #generating teachers file
     fInstructors = open("Instructors"+str(i+1)+".csv", "w")
-    daysNum=random.randint(10,16)   
+    daysNum=round(studentNumber/10)+random.randint(1,3) #garanting that there is enough days   
     for j in range(teacherNumber):
         Line="InstructorName"+str(j)
         role=random.randint(0,10)
