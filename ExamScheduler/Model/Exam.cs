@@ -10,8 +10,10 @@ namespace ExamScheduler
         public Teacher consultant = null;
         public Teacher examiner = null;
         public Teacher president = null;
-        public Teacher sercetary = null;
+        public Teacher secretary = null;
         public Teacher member = null;
+
+        public int timeSlot = -1;
 
     }
 }
