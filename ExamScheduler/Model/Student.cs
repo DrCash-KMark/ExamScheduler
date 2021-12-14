@@ -10,6 +10,6 @@ namespace ExamScheduler
         public String neptun;
 
         public Teacher consultant;
-        public String courseId;
+        public Course course;
     }
 }

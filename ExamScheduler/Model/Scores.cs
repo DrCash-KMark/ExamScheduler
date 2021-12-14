@@ -15,9 +15,11 @@ namespace ExamScheduler
         public const double PresidentChange = 1000;
         public const double SecretaryChange = 1000;
 
+        public const double NoLunch = 1000;
+
         //Soft
         public const double MemberNotAvailable = 5;
-        public const double SupervisorNotAvailable = 5;
+        public const double ConsultantNotAvailable = 5;
 
         public const double PresidentWorkloadWorst = 30;
         public const double PresidentWorkloadWorse = 20;
@@ -27,13 +29,25 @@ namespace ExamScheduler
         public const double SecretaryWorkloadWorse = 20;
         public const double SecretaryWorkloadBad = 10;
 
-
         public const double MemberWorkloadWorst = 30;
         public const double MemberWorkloadWorse = 20;
         public const double MemberWorkloadBad = 10;
 
-        public const double PresidentNotConsultant = 2;
-        public const double SecretaryNotConsultant = 1;
+        public const double ExaminerWorkloadWorst = 30;
+        public const double ExaminerWorkloadWorse = 20;
+        public const double ExaminerWorkloadBad = 10;
+
+        public const double ConsultantNotPresident = 2;
+        public const double ConsultantNotSecretary = 1;
         public const double ExaminerNotPresident = 1;
+
+        public const double LunchStartsSoon = 40;
+        public const double LunchEndsLate = 40;
+        public const double LunchNotOptimalLenght = 0.5;
+
+        public const double LeakySchedule = 5;
+
+        public const double ExamsStartsTooSoon = 10;
+        public const double ExamsEndsTooLate = 10;
     }
 }
