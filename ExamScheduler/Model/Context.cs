@@ -65,7 +65,7 @@ namespace ExamScheduler
                     if (s.course.Equals(c))
                         examPerC++;
                 }
-                examinersPerCourse.Add(c, examPerC);
+                examCountPerCourse.Add(c, examPerC);
             }
         }
 

@@ -13,7 +13,6 @@ namespace ExamScheduler
             InputReader inputReader = new InputReader(folder+ "Instructors1.csv",folder+ "Courses1.csv",folder+ "Students1.csv");
             inputReader.ReadInput();
             Context ctx = inputReader.GetContext();
-            Console.ReadKey();
             ZVScheduler scheduler = new ZVScheduler(ctx);
 
             var task = scheduler.RunAsync().ContinueWith(scheduleTask =>
