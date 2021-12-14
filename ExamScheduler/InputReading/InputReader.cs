@@ -34,13 +34,16 @@ namespace ExamScheduler.InputReading
             return students;
         }
 
+        public Context GetContext()
+        {
+            return new Context(students, teachers, courses);
+        }
+
         public void ReadInput()
         {
             ReadFileTeacher();
             ReadFileCourses();
             ReadFileStudents();
-            //
-            Console.ReadKey();
         }
 
         private void ReadFileTeacher()
