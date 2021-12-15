@@ -53,7 +53,7 @@ namespace ExamScheduler.InputReading
 
             foreach (String line in lines)
             {
-                if (line[0] == '#')
+                if (line.Length == 0 || line[0] == '#')
                 {
                     //this is a comment line
                 }
@@ -63,19 +63,19 @@ namespace ExamScheduler.InputReading
                     Teacher newTeacher = new Teacher
                     {
                         name = data[0],
-                        president = data[1] == "1",
-                        secretary = data[2] == "1",
-                        member = data[3] == "1"
+                        isPresident = data[1] == "1",
+                        isSecretary = data[2] == "1",
+                        isMember = data[3] == "1"
                     };
                     int avalibilityDays = ((data.Length - 4) / 11);
                     int numberDayIsDivedInto = 10;//this is a magic constant for now
-                    newTeacher.avability = new bool[avalibilityDays * numberDayIsDivedInto];
+                    newTeacher.availability = new bool[avalibilityDays * numberDayIsDivedInto];
                     for (int i = 0; i < avalibilityDays; i++)
                     {
                         for (int j = 0; j < numberDayIsDivedInto; j++)
                         {
                             //+5 is name+roles+date 1+3+1
-                            newTeacher.avability[i * numberDayIsDivedInto + j] = data[i * numberDayIsDivedInto + j + 5] == "1";
+                            newTeacher.availability[i * numberDayIsDivedInto + j] = data[i * numberDayIsDivedInto + j + 5] == "1";
                         }
                     }
                     teachers.Add(newTeacher);
@@ -90,7 +90,7 @@ namespace ExamScheduler.InputReading
 
             foreach (string line in lines)
             {
-                if (line[0] == '#')
+                if (line.Length == 0 || line[0] == '#')
                 {
                     //this is a comment line
                 }
@@ -123,7 +123,7 @@ namespace ExamScheduler.InputReading
             //procesing data
             foreach (String line in lines)
             {
-                if (line[0] == '#')
+                if (line.Length == 0 || line[0] == '#')
                 {
                     //this is a comment line
                 }

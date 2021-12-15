@@ -20,6 +20,8 @@ namespace ExamScheduler.Genetic
             ctx = context;
             CostFunctions = new List<Func<Schedule, double>>()
             {
+             //   GetStudentDuplicatedScore,                        A Student-ek egyediek maradnak a crossover során, így erre a függvényre nincs szükség.
+
                 GetPresidentNotAvailableScore,
                 GetSecretaryNotAvailableScore,
                 GetExaminerNotAvailableScore,
@@ -73,7 +75,7 @@ namespace ExamScheduler.Genetic
             {
                 count[e.student.id]++;
             }
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < ctx.examCount; i++)
             {
                 if (count[i] > 1)
                 {
@@ -90,7 +92,7 @@ namespace ExamScheduler.Genetic
             double score = 0;
             foreach (var e in sch.exams)
             {
-                if (e.president.avability[e.timeSlot] == false)
+                if (e.president.availability[e.timeSlot] == false)
                     score += Scores.PresidentNotAvailable;
             }
             return score;
@@ -101,7 +103,7 @@ namespace ExamScheduler.Genetic
             double score = 0;
             foreach (var e in sch.exams)
             {
-                if (e.secretary.avability[e.timeSlot] == false)
+                if (e.secretary.availability[e.timeSlot] == false)
                     score += Scores.SecretaryNotAvailable;
             }
             return score;
@@ -112,7 +114,7 @@ namespace ExamScheduler.Genetic
             double score = 0;
             foreach (var e in sch.exams)
             {
-                if (e.examiner.avability[e.timeSlot] == false)
+                if (e.examiner.availability[e.timeSlot] == false)
                     score += Scores.ExaminerNotAvailable;
             }
             return score;
@@ -123,7 +125,7 @@ namespace ExamScheduler.Genetic
             double score = 0;
             foreach (var e in sch.exams)
             {
-                if (e.member.avability[e.timeSlot] == false)
+                if (e.member.availability[e.timeSlot] == false)
                     score += Scores.MemberNotAvailable;
             }
             return score;
@@ -134,7 +136,7 @@ namespace ExamScheduler.Genetic
             double score = 0;
             foreach (var e in sch.exams)
             {
-                if (e.consultant.avability[e.timeSlot] == false)
+                if (e.consultant.availability[e.timeSlot] == false)
                     score += Scores.ConsultantNotAvailable;
             }
             return score;
@@ -368,7 +370,7 @@ namespace ExamScheduler.Genetic
             double score = 0;
             foreach (var e in sch.exams)
             {
-                if (e.consultant.president && e.consultant != e.president)
+                if (e.consultant.isPresident && e.consultant != e.president)
                     score += Scores.ConsultantNotPresident;
             }
             return score;
@@ -379,7 +381,7 @@ namespace ExamScheduler.Genetic
             double score = 0;
             foreach (var e in sch.exams)
             {
-                if (e.consultant.secretary && e.consultant != e.secretary)
+                if (e.consultant.isSecretary && e.consultant != e.secretary)
                     score += Scores.ConsultantNotSecretary;
             }
             return score;
@@ -390,7 +392,7 @@ namespace ExamScheduler.Genetic
             double score = 0;
             foreach (var e in sch.exams)
             {
-                if (e.examiner.president && e.examiner != e.president)
+                if (e.examiner.isPresident && e.examiner != e.president)
                     score += Scores.ExaminerNotPresident;
             }
             return score;

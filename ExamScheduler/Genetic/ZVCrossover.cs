@@ -39,23 +39,64 @@ namespace ExamScheduler.Genetic
 
             for (int i = 0; i < firstChild.Length; i++)
             {
+
                 if (RandomizationProvider.Current.GetDouble() < MixProbability)
                 {
                     Exam e = firstParentExams[rnd.Next(0, firstParentExams.Count)];
-                    deleteFromListBasedOnTimeSlot(firstParentExams, e.timeSlot);
-                    deleteFromListBasedOnTimeSlot(secondParentExams, e.timeSlot);
+                    bool done = false;
+                    do
+                    {
+                        deleteFromListBasedOnTimeSlot(firstParentExams, e.timeSlot);
 
+                        deleteFromListBasedOnStudentId(secondParentExams, e.student.id);
 
-                    firstChild.ReplaceGene(i, new Gene(e));
+                        firstChild.ReplaceGene(i, new Gene(e));
+
+                        Exam tmp = getExamBasedOnTimeSlot(secondParentExams, e.timeSlot);
+
+                        if (tmp != null)
+                        {
+                            e = getExamBasedOnStudentId(firstParentExams, tmp.student.id);
+
+                            deleteFromListBasedOnTimeSlot(secondParentExams, tmp.timeSlot);
+                            i++;
+                        }
+
+                        else
+                        {
+                            done = true;
+                        }
+                    } while (!done);
                 }
+
+
                 else
                 {
                     Exam e = secondParentExams[rnd.Next(0, secondParentExams.Count)];
-                    deleteFromListBasedOnTimeSlot(firstParentExams, e.timeSlot);
-                    deleteFromListBasedOnTimeSlot(secondParentExams, e.timeSlot);
+                    bool done = false;
+                    do
+                    {
+                        deleteFromListBasedOnTimeSlot(secondParentExams, e.timeSlot);
 
+                        deleteFromListBasedOnStudentId(firstParentExams, e.student.id);
 
-                    firstChild.ReplaceGene(i, new Gene(e));
+                        firstChild.ReplaceGene(i, new Gene(e));
+
+                        Exam tmp = getExamBasedOnTimeSlot(firstParentExams, e.timeSlot);
+
+                        if (tmp != null)
+                        {
+                            e = getExamBasedOnStudentId(secondParentExams, tmp.student.id);
+
+                            deleteFromListBasedOnTimeSlot(firstParentExams, tmp.timeSlot);
+                            i++;
+                        }
+
+                        else
+                        {
+                            done = true;
+                        }
+                    } while (!done);
                 }
             }
 
@@ -66,27 +107,78 @@ namespace ExamScheduler.Genetic
 
             for (int i = 0; i < secondChild.Length; i++)
             {
+
                 if (RandomizationProvider.Current.GetDouble() < MixProbability)
                 {
                     Exam e = firstParentExams[rnd.Next(0, firstParentExams.Count)];
-                    deleteFromListBasedOnTimeSlot(firstParentExams, e.timeSlot);
-                    deleteFromListBasedOnTimeSlot(secondParentExams, e.timeSlot);
+                    bool done = false;
+                    do
+                    {
+                        deleteFromListBasedOnTimeSlot(firstParentExams, e.timeSlot);
 
+                        deleteFromListBasedOnStudentId(secondParentExams, e.student.id);
 
-                    secondChild.ReplaceGene(i, new Gene(e));
+                        secondChild.ReplaceGene(i, new Gene(e));
+
+                        Exam tmp = getExamBasedOnTimeSlot(secondParentExams, e.timeSlot);
+
+                        if (tmp != null)
+                        {
+                            e = getExamBasedOnStudentId(firstParentExams, tmp.student.id);
+
+                            deleteFromListBasedOnTimeSlot(secondParentExams, tmp.timeSlot);
+                            i++;
+                        }
+
+                        else
+                        {
+                            done = true;
+                        }
+                    } while (!done);
                 }
+
+
                 else
                 {
                     Exam e = secondParentExams[rnd.Next(0, secondParentExams.Count)];
-                    deleteFromListBasedOnTimeSlot(firstParentExams, e.timeSlot);
-                    deleteFromListBasedOnTimeSlot(secondParentExams, e.timeSlot);
+                    bool done = false;
+                    do
+                    {
+                        deleteFromListBasedOnTimeSlot(secondParentExams, e.timeSlot);
 
+                        deleteFromListBasedOnStudentId(firstParentExams, e.student.id);
 
-                    secondChild.ReplaceGene(i, new Gene(e));
+                        secondChild.ReplaceGene(i, new Gene(e));
+
+                        Exam tmp = getExamBasedOnTimeSlot(firstParentExams, e.timeSlot);
+
+                        if (tmp != null)
+                        {
+                            e = getExamBasedOnStudentId(secondParentExams, tmp.student.id);
+
+                            deleteFromListBasedOnTimeSlot(firstParentExams, tmp.timeSlot);
+                            i++;
+                        }
+
+                        else
+                        {
+                            done = true;
+                        }
+                    } while (!done);
                 }
             }
 
             return new List<IChromosome> { firstChild, secondChild };
+        }
+
+
+        private void fillExamList(List<Exam> list, IChromosome parent)
+        {
+            for (int i = 0; i < parent.Length; i++)
+            {
+                Exam e = (Exam)parent.GetGene(i).Value;
+                list.Add(e);
+            }
         }
 
         private void deleteFromListBasedOnTimeSlot(List<Exam> list, int timeSlot)
@@ -101,13 +193,40 @@ namespace ExamScheduler.Genetic
             }
         }
 
-        private void fillExamList(List<Exam> list, IChromosome parent)
+        private void deleteFromListBasedOnStudentId(List<Exam> list, int id)
         {
-            for (int i = 0; i < parent.Length; i++)
+            foreach (var l in list)
             {
-                Exam e = (Exam) parent.GetGene(i).Value;
-                list.Add(e);
+                if (l.student.id == id)
+                {
+                    list.Remove(l);
+                    break;
+                }
             }
+        }
+
+        private Exam getExamBasedOnTimeSlot(List<Exam> list, int timeSlot)
+        {
+            foreach (var l in list)
+            {
+                if (l.timeSlot == timeSlot)
+                {
+                    return l;
+                }
+            }
+            return null;
+        }
+
+        private Exam getExamBasedOnStudentId(List<Exam> list, int id)
+        {
+            foreach (var l in list)
+            {
+                if (l.student.id == id)
+                {
+                    return l;
+                }
+            }
+            return null;
         }
     }
 }

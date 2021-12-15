@@ -18,11 +18,6 @@ namespace ExamScheduler
             var task = scheduler.RunAsync().ContinueWith(scheduleTask =>
             {
                 Schedule resultSchedule = scheduleTask.Result;
-
-                /*         ZVFitness evaluator = new ZVFitness(context);
-                         double penaltyScore = evaluator.EvaluateAll(resultSchedule);
-                         Console.WriteLine("Penalty score: " + penaltyScore);*/
-
             });
 
 

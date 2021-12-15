@@ -19,8 +19,15 @@ namespace ExamScheduler.Genetic
 
         protected override void PerformMutate(IChromosome chromosome, float probability)
         {
-            ZVChromosome ch = (ZVChromosome)chromosome;
+            SwitchGenes(chromosome, probability);
+            PresidentAndSecretaryChange(chromosome, probability);
+            ConsultantNotPresident(chromosome, probability);
+            ConsultantNotSecretary(chromosome, probability);
+            PresidentAndSecretaryNotAvailable(chromosome, probability);
+        }
 
+        private void SwitchGenes(IChromosome chromosome, float probability)
+        {
             if (RandomizationProvider.Current.GetDouble() <= probability * 10)
             {
                 var indexes = RandomizationProvider.Current.GetUniqueInts(2, 0, chromosome.Length);
@@ -32,6 +39,11 @@ namespace ExamScheduler.Genetic
                 chromosome.ReplaceGene(firstIndex, secondGene);
                 chromosome.ReplaceGene(secondIndex, firstGene);
             }
+        }
+
+        private void PresidentAndSecretaryChange(IChromosome chromosome, float probability)
+        {
+            ZVChromosome ch = (ZVChromosome)chromosome;
 
             if (RandomizationProvider.Current.GetDouble() <= probability / 2)
             {
@@ -81,10 +93,12 @@ namespace ExamScheduler.Genetic
                             chromosome.ReplaceGene(geneIndexes[l], genes[l]);
                         }
                     }
-
                 }
             }
+        }
 
+        private void ConsultantNotPresident(IChromosome chromosome, float probability)
+        {
             if (RandomizationProvider.Current.GetDouble() <= probability)
             {
                 for (int i = 0; i < ctx.examCount; i++)
@@ -92,7 +106,7 @@ namespace ExamScheduler.Genetic
                     Gene gene = chromosome.GetGene(i);
                     Exam exam = (Exam)gene.Value;
 
-                    if (exam.consultant.president && exam.consultant != exam.president && RandomizationProvider.Current.GetDouble() <= probability)
+                    if (exam.consultant.isPresident && exam.consultant != exam.president && RandomizationProvider.Current.GetDouble() <= probability)
                     {
                         ((Exam)gene.Value).president = exam.consultant;
                         chromosome.ReplaceGene(i, gene);
@@ -100,7 +114,10 @@ namespace ExamScheduler.Genetic
                     }
                 }
             }
+        }
 
+        private void ConsultantNotSecretary(IChromosome chromosome, float probability)
+        {
             if (RandomizationProvider.Current.GetDouble() <= probability)
             {
                 for (int i = 0; i < ctx.examCount; i++)
@@ -108,14 +125,17 @@ namespace ExamScheduler.Genetic
                     Gene gene = chromosome.GetGene(i);
                     Exam exam = (Exam)gene.Value;
 
-                    if (exam.consultant.secretary && exam.consultant != exam.secretary && RandomizationProvider.Current.GetDouble() <= probability)
+                    if (exam.consultant.isSecretary && exam.consultant != exam.secretary && RandomizationProvider.Current.GetDouble() <= probability)
                     {
                         ((Exam)gene.Value).secretary = exam.consultant;
                         chromosome.ReplaceGene(i, gene);
                     }
                 }
             }
+        }
 
+        private void PresidentAndSecretaryNotAvailable(IChromosome chromosome, float probability)
+        {
             if (RandomizationProvider.Current.GetDouble() <= probability / 4)
             {
                 for (int i = 0; i < ctx.examCount; i++)
@@ -123,13 +143,13 @@ namespace ExamScheduler.Genetic
                     Gene gene = chromosome.GetGene(i);
                     Exam exam = (Exam)gene.Value;
 
-                    if (exam.president.avability[exam.timeSlot] == false)
+                    if (exam.president.availability[exam.timeSlot] == false)
                     {
                         ((Exam)gene.Value).president = ctx.presidents[ctx.rnd.Next(0, ctx.presidents.Count)];
                         chromosome.ReplaceGene(i, gene);
                     }
 
-                    if (exam.secretary.avability[exam.timeSlot] == false)
+                    if (exam.secretary.availability[exam.timeSlot] == false)
                     {
                         ((Exam)gene.Value).secretary = ctx.secretaries[ctx.rnd.Next(0, ctx.secretaries.Count)];
                         chromosome.ReplaceGene(i, gene);
@@ -137,7 +157,6 @@ namespace ExamScheduler.Genetic
                 }
 
             }
-
         }
     }
 }
