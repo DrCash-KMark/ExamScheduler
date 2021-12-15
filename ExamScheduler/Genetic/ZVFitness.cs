@@ -20,7 +20,7 @@ namespace ExamScheduler.Genetic
             ctx = context;
             CostFunctions = new List<Func<Schedule, double>>()
             {
-                GetStudentDuplicatedScore,
+             //   GetStudentDuplicatedScore,                        A Student-ek egyediek maradnak a crossover során, így erre a függvényre nincs szükség.
 
                 GetPresidentNotAvailableScore,
                 GetSecretaryNotAvailableScore,

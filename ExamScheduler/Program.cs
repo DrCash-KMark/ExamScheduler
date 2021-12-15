@@ -10,7 +10,7 @@ namespace ExamScheduler
         static void Main(string[] args)
         {
             string folder = @"Inputs\";
-            InputReader inputReader = new InputReader(folder+ "Instructors.csv",folder+ "Courses.csv",folder+ "Students.csv");
+            InputReader inputReader = new InputReader(folder+ "InstructorsCyclic.csv",folder+ "CoursesCyclic.csv",folder+ "StudentsCyclic.csv");
             inputReader.ReadInput();
             Context ctx = inputReader.GetContext();
             ZVScheduler scheduler = new ZVScheduler(ctx);
@@ -18,11 +18,6 @@ namespace ExamScheduler
             var task = scheduler.RunAsync().ContinueWith(scheduleTask =>
             {
                 Schedule resultSchedule = scheduleTask.Result;
-
-                /*         ZVFitness evaluator = new ZVFitness(context);
-                         double penaltyScore = evaluator.EvaluateAll(resultSchedule);
-                         Console.WriteLine("Penalty score: " + penaltyScore);*/
-
             });
 
 
