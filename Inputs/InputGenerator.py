@@ -32,7 +32,7 @@ for i in range(3):
     fCourses.close()
     #generating teachers file
     fInstructors = open("Instructors"+str(i+1)+".csv", "w")
-    daysNum=random.randint(10,16)   
+    daysNum=random.randint(round(studentNumber/10)+2,round(studentNumber/10)+6)   
     for j in range(teacherNumber):
         Line="InstructorName"+str(j)
         role=random.randint(0,10)
@@ -48,7 +48,10 @@ for i in range(3):
         for k in range(daysNum):
             Line+=";2020.01."+str(k+1)+"."
             for x in range(10):
-                avalability= random.randint(0,5)
+                if(role<3):
+                    avalability=random.randint(0,10)
+                else:
+                    avalability= random.randint(0,5)
                 if(avalability==0):
                     #not avalable
                     Line+=";0"
