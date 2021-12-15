@@ -32,15 +32,16 @@ for i in range(3):
     fCourses.close()
     #generating teachers file
     fInstructors = open("Instructors"+str(i+1)+".csv", "w")
+    #ensuring there is enough days for all students
     daysNum=random.randint(round(studentNumber/10)+2,round(studentNumber/10)+6)   
     for j in range(teacherNumber):
         Line="InstructorName"+str(j)
         role=random.randint(0,10)
         if(role==0):
             Line+=";1;0;0;"
-        elif(role==1):
+        elif(role<3):
             Line+=";0;1;0"
-        elif(role==2):
+        elif(role<5):
             Line+=";0;0;1"
         else:
             Line+=";0;0;0"
