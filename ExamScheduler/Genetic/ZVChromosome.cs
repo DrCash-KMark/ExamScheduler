@@ -11,8 +11,6 @@ namespace ExamScheduler.Genetic
 
         public List<int> freeTimeSlots = new List<int>();
 
-    //    public List<int> owo;
-        public List<int> uwu = new List<int>();
 
         public ZVChromosome(Context _ctx) : base(_ctx.examCount)
         {
@@ -27,7 +25,6 @@ namespace ExamScheduler.Genetic
             {
                 ReplaceGene(i, GenerateGene(i));
             }
-            var g = GetGenes();
         }
 
         public Schedule Schedule
@@ -66,8 +63,6 @@ namespace ExamScheduler.Genetic
             freeTimeSlots.RemoveAt(idx);
 
             e.timeSlot = timeSlot;
-
-            uwu.Add(timeSlot);
 
             e.student = ctx.rndStudents[geneIndex];
             e.consultant = e.student.consultant;

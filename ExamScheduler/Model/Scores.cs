@@ -7,6 +7,8 @@ namespace ExamScheduler
     static class Scores
     {
         //Hard
+        public const double StudentDuplicated = 10000;
+
         public const double PresidentNotAvailable = 1000;
         public const double SecretaryNotAvailable = 1000;
         public const double ExaminerNotAvailable = 1000;

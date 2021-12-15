@@ -10,7 +10,7 @@ namespace ExamScheduler
         static void Main(string[] args)
         {
             string folder = @"Inputs\";
-            InputReader inputReader = new InputReader(folder+ "Instructors1.csv",folder+ "Courses1.csv",folder+ "Students1.csv");
+            InputReader inputReader = new InputReader(folder+ "Instructors.csv",folder+ "Courses.csv",folder+ "Students.csv");
             inputReader.ReadInput();
             Context ctx = inputReader.GetContext();
             ZVScheduler scheduler = new ZVScheduler(ctx);

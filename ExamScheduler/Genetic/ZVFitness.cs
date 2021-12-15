@@ -65,6 +65,26 @@ namespace ExamScheduler.Genetic
             return score;
         }
 
+        public double GetStudentDuplicatedScore(Schedule sch)
+        {
+            double score = 0;
+            int[] count = new int[ctx.examCount];
+            foreach (var e in sch.exams)
+            {
+                count[e.student.id]++;
+            }
+            for (int i = 0; i < 100; i++)
+            {
+                if (count[i] > 1)
+                {
+                    score += (count[i] - 1) * Scores.StudentDuplicated;
+
+                }
+
+            }
+            return score;
+        }
+
         public double GetPresidentNotAvailableScore(Schedule sch)
         {
             double score = 0;
