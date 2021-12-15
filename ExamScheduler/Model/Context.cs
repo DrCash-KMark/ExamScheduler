@@ -30,6 +30,8 @@ namespace ExamScheduler
             teachers = _teachers;
             courses = _courses;
 
+            FillStudentIds();
+
             examCount = _students.Count;
             availableHours = teachers[0].avability.Length;
 
@@ -65,8 +67,14 @@ namespace ExamScheduler
                     if (s.course.Equals(c))
                         examPerC++;
                 }
-                examinersPerCourse.Add(c, examPerC);
+                examCountPerCourse.Add(c, examPerC);
             }
+        }
+        
+        public void FillStudentIds()
+        {
+            for (int i = 0; i < students.Count; i++)
+                students[i].id = i;
         }
 
     }

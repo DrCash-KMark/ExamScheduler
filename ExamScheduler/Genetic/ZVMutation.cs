@@ -38,12 +38,13 @@ namespace ExamScheduler.Genetic
                 for (int i = 0; i < ctx.availableHours; i += 5)
                 {
                     Gene[] genes = new Gene[5];
+                    int[] geneIndexes = new int[5];
                     Exam[] exams = new Exam[5];
                     Teacher[] presidents = new Teacher[5];
                     Teacher[] secretaries = new Teacher[5];
                     for (int j = 0; j < 5; j++)
                     {
-                        if (ch.schedule.availableHourUses[i + j])
+                        if (ch.Schedule.availableHourUses[i + j])
                         {
                             Gene g = ch.GetGenes().Where(g =>
                             {
@@ -51,6 +52,7 @@ namespace ExamScheduler.Genetic
                                 return e.timeSlot == i + j;
                             }).SingleOrDefault();
                             genes[(i + j) % 5] = g;
+                            geneIndexes[(i + j) % 5] = ch.GetGeneIdx(g);
 
                             Exam e = (Exam)g.Value;
                             exams[(i + j) % 5] = e;
@@ -65,17 +67,18 @@ namespace ExamScheduler.Genetic
 
                     for (int l = 0; l < 5; l++)
                     {
-                        if (exams[l].president != mostPresident && RandomizationProvider.Current.GetDouble() <= probability / 2)
+                        if (exams[l] != null && mostPresident != null && exams[l].president != mostPresident && RandomizationProvider.Current.GetDouble() <= probability / 2)
                         {
+
                             ((Exam)genes[l].Value).president = mostPresident;
-                            chromosome.ReplaceGene(i + l, genes[l]);
+                            chromosome.ReplaceGene(geneIndexes[l], genes[l]);
 
                         }
 
-                        if (exams[l].secretary != mostSecretary && RandomizationProvider.Current.GetDouble() <= probability / 2)
+                        if (exams[l] != null && mostSecretary != null && exams[l].secretary != mostSecretary && RandomizationProvider.Current.GetDouble() <= probability / 2)
                         {
                             ((Exam)genes[l].Value).secretary = mostSecretary;
-                            chromosome.ReplaceGene(i + l, genes[l]);
+                            chromosome.ReplaceGene(geneIndexes[l], genes[l]);
                         }
                     }
 
@@ -109,7 +112,6 @@ namespace ExamScheduler.Genetic
                     {
                         ((Exam)gene.Value).secretary = exam.consultant;
                         chromosome.ReplaceGene(i, gene);
-
                     }
                 }
             }

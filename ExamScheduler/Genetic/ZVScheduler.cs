@@ -29,7 +29,7 @@ namespace ExamScheduler.Genetic
         public Task<Schedule> RunAsync()
         {
             var selection = new EliteSelection();
-            var crossover = new UniformCrossover(0.5f);
+            var crossover = new ZVCrossover(0.5f);
             var mutation = new ZVMutation(ctx);
 
 
@@ -55,7 +55,7 @@ namespace ExamScheduler.Genetic
 
                     Console.WriteLine("Best solution found has {0} fitness.", geneticAlgorithm.BestChromosome.Fitness);
                     var bestChromosome = geneticAlgorithm.BestChromosome as ZVChromosome;
-                    var best = bestChromosome.schedule;
+                    var best = bestChromosome.Schedule;
                     return best;
 
                 });
