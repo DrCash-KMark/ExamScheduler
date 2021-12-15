@@ -53,7 +53,7 @@ namespace ExamScheduler.InputReading
 
             foreach (String line in lines)
             {
-                if (line[0] == '#')
+                if (line.Length == 0 || line[0] == '#')
                 {
                     //this is a comment line
                 }
@@ -90,7 +90,7 @@ namespace ExamScheduler.InputReading
 
             foreach (string line in lines)
             {
-                if (line[0] == '#')
+                if (line.Length == 0 || line[0] == '#')
                 {
                     //this is a comment line
                 }
@@ -123,7 +123,7 @@ namespace ExamScheduler.InputReading
             //procesing data
             foreach (String line in lines)
             {
-                if (line[0] == '#')
+                if (line.Length == 0 || line[0] == '#')
                 {
                     //this is a comment line
                 }

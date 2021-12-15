@@ -20,6 +20,8 @@ namespace ExamScheduler.Genetic
             ctx = context;
             CostFunctions = new List<Func<Schedule, double>>()
             {
+                GetStudentDuplicatedScore,
+
                 GetPresidentNotAvailableScore,
                 GetSecretaryNotAvailableScore,
                 GetExaminerNotAvailableScore,
@@ -73,7 +75,7 @@ namespace ExamScheduler.Genetic
             {
                 count[e.student.id]++;
             }
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < ctx.examCount; i++)
             {
                 if (count[i] > 1)
                 {
