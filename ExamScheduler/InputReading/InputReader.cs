@@ -53,26 +53,33 @@ namespace ExamScheduler.InputReading
 
             foreach (String line in lines)
             {
-                string[] data = line.Split(';');
-                Teacher newTeacher = new Teacher
+                if (line[0] == '#')
                 {
-                    name = data[0],
-                    president = data[1] == "1",
-                    secretary = data[2] == "1",
-                    member = data[3] == "1"
-                };
-                int avalibilityDays = ((data.Length - 4) / 11);
-                int numberDayIsDivedInto = 10;//this is a magic constant for now
-                newTeacher.avability = new bool[avalibilityDays * numberDayIsDivedInto];
-                for (int i = 0; i < avalibilityDays; i++)
-                {
-                    for (int j = 0; j < numberDayIsDivedInto; j++)
-                    {
-                        //+5 is name+roles+date 1+3+1
-                        newTeacher.avability[i * numberDayIsDivedInto + j] = data[i * numberDayIsDivedInto + j + 5] == "1";
-                    }
+                    //this is a comment line
                 }
-                teachers.Add(newTeacher);
+                else
+                {
+                    string[] data = line.Split(';');
+                    Teacher newTeacher = new Teacher
+                    {
+                        name = data[0],
+                        president = data[1] == "1",
+                        secretary = data[2] == "1",
+                        member = data[3] == "1"
+                    };
+                    int avalibilityDays = ((data.Length - 4) / 11);
+                    int numberDayIsDivedInto = 10;//this is a magic constant for now
+                    newTeacher.avability = new bool[avalibilityDays * numberDayIsDivedInto];
+                    for (int i = 0; i < avalibilityDays; i++)
+                    {
+                        for (int j = 0; j < numberDayIsDivedInto; j++)
+                        {
+                            //+5 is name+roles+date 1+3+1
+                            newTeacher.avability[i * numberDayIsDivedInto + j] = data[i * numberDayIsDivedInto + j + 5] == "1";
+                        }
+                    }
+                    teachers.Add(newTeacher);
+                }
             }
         }
 
@@ -83,20 +90,27 @@ namespace ExamScheduler.InputReading
 
             foreach (string line in lines)
             {
-                string[] date = line.Split(';');
-                Course newCourse = new Course
+                if (line[0] == '#')
                 {
-                    courseCode = date[0],
-                    name = date[1]
-                };
-                Teacher[] coursTeachers = new Teacher[date.Length - 2];
-                for (int i = 0; i < coursTeachers.Length; i++)
-                {
-                    coursTeachers[i] = teachers.Find(o => o.name == date[i + 2]);
+                    //this is a comment line
                 }
-                newCourse.teachers = coursTeachers;
+                else
+                {
+                    string[] date = line.Split(';');
+                    Course newCourse = new Course
+                    {
+                        courseCode = date[0],
+                        name = date[1]
+                    };
+                    Teacher[] coursTeachers = new Teacher[date.Length - 2];
+                    for (int i = 0; i < coursTeachers.Length; i++)
+                    {
+                        coursTeachers[i] = teachers.Find(o => o.name == date[i + 2]);
+                    }
+                    newCourse.teachers = coursTeachers;
 
-                courses.Add(newCourse);
+                    courses.Add(newCourse);
+                }
             }
         }
 
@@ -109,15 +123,22 @@ namespace ExamScheduler.InputReading
             //procesing data
             foreach (String line in lines)
             {
-                string[] data = line.Split(';');
-                Student newStudent = new Student
+                if (line[0] == '#')
                 {
-                    name = data[0],
-                    neptun = data[1],
-                    consultant = teachers.Find(o => o.name == data[2]),
-                    course = courses.Find(o => o.courseCode == data[4])                    
-                };                
-                students.Add(newStudent);
+                    //this is a comment line
+                }
+                else
+                {
+                    string[] data = line.Split(';');
+                    Student newStudent = new Student
+                    {
+                        name = data[0],
+                        neptun = data[1],
+                        consultant = teachers.Find(o => o.name == data[2]),
+                        course = courses.Find(o => o.courseCode == data[4])
+                    };
+                    students.Add(newStudent);
+                }
             }
         }
 
