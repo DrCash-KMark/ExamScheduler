@@ -8,10 +8,10 @@ namespace ExamScheduler
     {
         public String name;
 
-        public bool president;
-        public bool secretary;
-        public bool member;
+        public bool isPresident;
+        public bool isSecretary;
+        public bool isMember;
 
-        public bool[] avability;
+        public bool[] availability;
     }
 }

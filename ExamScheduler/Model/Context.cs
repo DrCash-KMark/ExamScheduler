@@ -18,7 +18,7 @@ namespace ExamScheduler
         public List<Teacher> presidents;
         public List<Teacher> secretaries;
         public List<Teacher> members;
-        public Dictionary<Course, int> examinersPerCourse = new Dictionary<Course, int>();
+    //    public Dictionary<Course, int> examinersPerCourse = new Dictionary<Course, int>();
 
         public Random rnd = new Random();
 
@@ -33,7 +33,7 @@ namespace ExamScheduler
             FillStudentIds();
 
             examCount = _students.Count;
-            availableHours = teachers[0].avability.Length;
+            availableHours = teachers[0].availability.Length;
 
             presidents = new List<Teacher>();
             secretaries = new List<Teacher>();
@@ -41,11 +41,11 @@ namespace ExamScheduler
             
             foreach(Teacher t in teachers)
             {
-                if (t.president)
+                if (t.isPresident)
                     presidents.Add(t);
-                if (t.secretary)
+                if (t.isSecretary)
                     secretaries.Add(t);
-                if (t.member)
+                if (t.isMember)
                     members.Add(t);
             }
 
@@ -54,12 +54,12 @@ namespace ExamScheduler
 
             foreach(var c in courses)
             {
-                int examinerPerC = 0;
+             /*   int examinerPerC = 0;
                 foreach(var t in c.teachers)
                 {
                     examinerPerC++;
                 }
-                examinersPerCourse.Add(c, examinerPerC);
+                examinersPerCourse.Add(c, examinerPerC);*/
 
                 int examPerC = 0;
                 foreach(var s in students)

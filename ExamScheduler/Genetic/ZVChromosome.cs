@@ -31,13 +31,11 @@ namespace ExamScheduler.Genetic
         {
             get
             {
-                List<int> owo = new List<int>();
                 Schedule schedule = new Schedule(ctx.examCount, ctx.availableHours);
                 for (int i = 0; i < ctx.examCount; i++)
                 {
                     Exam e = (Exam)GetGene(i).Value;
                     schedule.exams[i] = e;
-                    owo.Add(e.timeSlot);
                     schedule.availableHourUses[e.timeSlot] = true;
                 }
                 return schedule;
