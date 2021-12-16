@@ -28,8 +28,9 @@ namespace ExamScheduler.Genetic
 
         public Task<Schedule> RunAsync()
         {
-           // var selection = new EliteSelection();
-            var selection = new TournamentSelection();
+            //var selection = new EliteSelection();
+            //var selection = new TournamentSelection();
+            var selection = new RouletteWheelSelection();
 
        //   var crossover = new ZVCycleCrossover();
             var crossover = new ZVCrossover(0.5f);
